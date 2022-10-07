@@ -1,11 +1,11 @@
 # cotomar
 
-#### Curso Escolar 2021-2022
+#### Curso Escolar 2022-2023
 #### Autor: [Ángel Guerrero Marín] https://github.com/aguerrerom
 
 ## Breve descripción del proyecto
 
-Mi proyecto consiste en una aplicación dónde se podrán administrar elementos refentes a la Asociación de Propietarios de Cotomar (socios, aforo piscinas, usuarios, deudas de los socios, etc.), así como una web de carácter informativo de la comunidad.
+Mi proyecto consiste en una aplicación dónde se podrán administrar elementos refentes a la Asociación de Propietarios de Cotomar (socios, aforo piscinas, usuarios, deudas de los socios, etc.), así como una web de carácter informativo de la comunidad. La idea surgió de la necesidad de tener centralizada toda la información de la comunidad para poder ayudar a las personas mayores a consultar de una manera mas intuitiva, ya que a día de hoy la información se muestra a través de grupos de WhatsApp, correo electrónico y cartas. 
 
 ## Definir el objetivo de la aplicación
 
