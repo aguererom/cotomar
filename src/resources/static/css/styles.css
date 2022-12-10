@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+
+.neons {
+	font-family: 'Codystar';
+   	text-align: center;
+   	background: black;
+   	border-radius: 15px;
+   	background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.neons h2 {
+  font-size: 3rem;
+  text-align: center;
+   font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+     from {
+      color: #fff;
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
+  }
+  
+  to {
+     color: gray;
+    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+  }
+}
+body { 
+	
+	background-image: url("https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg"); /* fallback */
+
+	background-image: linear-gradient(to right, rgba(132, 250, 176, 0.5),
+		rgba(143, 211, 244, 0.5)), url("https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg");
+	
+}	
+
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}
+
+#arriba{
+	margin-left:99%;
+}
+
+#abajo{
+	margin-left:99%;
+}
+
+.modal-title{
+	margin-left:35%;
+}
+
+.threeD {
+  color: rgba(132, 250, 176, 1);
+  white-space: nowrap;
+  transform: translate(-25%, -20%);
+  margin-top: 5%;
+  font-size: 2em;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+    1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+    5px 13px 15px black;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1)translate(-20%, -5%);
+  text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+    1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+    1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+}
+
+#cerrar {
+	position: absolute;
+	margin-left: 85%;
+}
+/* Texto de error cuando se modifica la contraseña */
+span{display:block;font-size:.8em;margin:0px 0 10px;padding:5px 0 5px 11px;width:auto}
+
+.confirmacion{
+	
+	background:#C6FFD5;border:1px solid green;
+	gap: 20px;
+
+}
+	
+.negacion{
+	background:#ffcccc;border:1px solid red;
+	margin-top: 20px;
+}
+
+#passwordNR.form-control{
+	width: 93%;
+}
+
+.contraseña {
+	display: none;
+}
+
+.admin {
+	position:relative;
+	left: 30%;
+}
