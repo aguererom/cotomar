@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<head>
+<title>403 Error</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/error403.css">
+</head>
+<body>
+	<section id="error">
+		<div class="content">
+			<i class="fa fa-warning"></i>
+			<h1>403</h1>
+			<p>Oops! Usted no tiene permiso para acceder a este recurso.</p>
+			<p>Pongase en contacto con el administrador.</p>
+			<a class="back"  th:href="@{/index}">Volver</a>
+		</div>
+	</section>	
+</body>
+</html>
