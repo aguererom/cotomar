@@ -18,11 +18,10 @@ public class MainController {
 	AforoServiceImpl aforoService;
 
 	@GetMapping("/index")
-	public String index(@RequestParam(name = "nickname", required=false) String nickname, Model model) {
+	public String index(Model model) {
 
 		model.addAttribute("aforo1", aforoService.obtenerAforoRecinto("piscina 1").getNumPersonas());
 		model.addAttribute("aforo2", aforoService.obtenerAforoRecinto("piscina 2").getNumPersonas());
-		model.addAttribute("nickname", nickname);
 		return "index";
 		
 	}	
