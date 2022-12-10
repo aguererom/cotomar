@@ -115,7 +115,7 @@
 				<goal>repackage</goal>
 			    </goals>
 			    <configuration>
-				<mainClass>org.iesalixar.servidor</mainClass>
+				<mainClass>org.iesalixar.servidor.CotomarApplication</mainClass>
 			    </configuration>
 			</execution>
 		    </executions>
