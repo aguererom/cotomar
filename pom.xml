@@ -106,23 +106,20 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-		    <plugin>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
-			<configuration>
-			    <mainClass>${spring.boot.mainclass}</mainClass>
-			</configuration>
-			<executions>
-			    <execution>
-				<goals>
-				    <goal>repackage</goal>
-				</goals>
-			    </execution>
-			</executions>
-		    </plugin>
-		</plugins>
-		
+		<plugin>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-maven-plugin</artifactId>
+		    <executions>
+			<execution>
+			    <goals>
+				<goal>repackage</goal>
+			    </goals>
+			    <configuration>
+				<mainClass>org.iesalixar.servidor</mainClass>
+			    </configuration>
+			</execution>
+		    </executions>
+		</plugin>
 	</build>
 
 </project>
