@@ -66,12 +66,11 @@ public class LoginController {
 				
 				
 				session.setAttribute("nickname", u.getUserName());
-				model.addAttribute("nickname", u.getUserName());
 				logger.info("Creamos atributo de sesion: " + session.getAttribute("nickname"));
 				u.setActivo(true);
 				usuarioService.actualizarUsuario(u);
 				logger.info("Accediendo a web Cotomar con las credenciales: " + u.toString());
-				return "redirect:/index?nickname=usuario";
+				return "redirect:/index";
 				
 			}		
 
