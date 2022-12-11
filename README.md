@@ -11,8 +11,9 @@
 3. Requisitos funcionales.
 4. Comparativa con las alternativas del mercado.
 5. Justificación del proyecto.
-6. Estructura del proyecto.
-7. Conclusión.
+6. Uso del stack tecnológico.
+7. Estructura del proyecto.
+8. Conclusión.
 
 ## 1. Breve descripción del proyecto
 
