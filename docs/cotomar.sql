@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-06-2022 a las 18:17:41
+-- Tiempo de generación: 10-12-2022 a las 15:04:14
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -33,25 +33,68 @@ CREATE TABLE IF NOT EXISTS `aforo` (
   `fecha` varchar(255) NOT NULL,
   `hora` varchar(255) NOT NULL,
   `num_personas` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
+  `recinto_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK7kwapdjfbpy7klb3ffidqew31` (`recinto_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `aforo`
 --
 
-INSERT INTO `aforo` (`id`, `fecha`, `hora`, `num_personas`) VALUES
-(98, '15/06/2022', '15:29:06', '99'),
-(97, '15/06/2022', '15:27:23', '100'),
-(95, '15/06/2022', '14:35:47', '47'),
-(94, '15/06/2022', '14:35:38', '35'),
-(96, '15/06/2022', '15:06:20', '21'),
-(93, '15/06/2022', '14:34:17', '25'),
-(90, '15/06/2022', '00:52:29', '0'),
-(89, '15/06/2022', '00:52:24', '100'),
-(88, '15/06/2022', '00:51:46', '1'),
-(87, '15:06:2022', '00:51:16', '5'),
-(86, '15/6/22 0:49', '00:49:45', '90');
+INSERT INTO `aforo` (`id`, `fecha`, `hora`, `num_personas`, `recinto_id`) VALUES
+(1, '09/12/2022', '07:27:11', '91', 1),
+(2, '09/12/2022', '07:27:19', '90', 2),
+(3, '09/12/2022', '07:27:32', '1', 1),
+(4, '09/12/2022', '09:20:52', '37', 1),
+(5, '09/12/2022', '09:21:30', '56', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `deudas_socio`
+--
+
+DROP TABLE IF EXISTS `deudas_socio`;
+CREATE TABLE IF NOT EXISTS `deudas_socio` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `importe` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `socio_dni` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKmxnyhyajjqm49ffeoxyq05aya` (`socio_dni`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `deudas_socio`
+--
+
+INSERT INTO `deudas_socio` (`id`, `importe`, `year`, `socio_dni`) VALUES
+(5, '250', '2022', '47347598M');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `recintos_urb`
+--
+
+DROP TABLE IF EXISTS `recintos_urb`;
+CREATE TABLE IF NOT EXISTS `recintos_urb` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `aforo_max` int(11) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `recintos_urb`
+--
+
+INSERT INTO `recintos_urb` (`id`, `aforo_max`, `direccion`, `nombre`) VALUES
+(1, 100, 'Sector A Segunda Fase 14', 'Piscina 1'),
+(2, 90, 'Sector A Segunda Fase 14B', 'Piscina 2'),
+(3, 50, 'C/ SN', 'Pistas de futbol');
 
 -- --------------------------------------------------------
 
@@ -61,27 +104,22 @@ INSERT INTO `aforo` (`id`, `fecha`, `hora`, `num_personas`) VALUES
 
 DROP TABLE IF EXISTS `socios`;
 CREATE TABLE IF NOT EXISTS `socios` (
-  `num_casa` varchar(255) NOT NULL,
-  `adeudado` tinyint(1) NOT NULL,
+  `dni` varchar(255) NOT NULL,
   `apellidos` varchar(255) NOT NULL,
-  `importe` varchar(255) NOT NULL,
+  `cp` varchar(255) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `year` varchar(255) NOT NULL,
-  `year2` varchar(255) DEFAULT NULL,
-  `year3` varchar(255) DEFAULT NULL,
-  `year4` varchar(255) DEFAULT NULL,
-  `year5` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`num_casa`)
+  `num_casa` varchar(255) NOT NULL,
+  PRIMARY KEY (`dni`),
+  UNIQUE KEY `UK_soryh6x9bfe8rg6hr8ypm4p0g` (`num_casa`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `socios`
 --
 
-INSERT INTO `socios` (`num_casa`, `adeudado`, `apellidos`, `importe`, `nombre`, `year`, `year2`, `year3`, `year4`, `year5`) VALUES
-('365', 0, 'Prados Perez', '250', 'Ana', '2022', '', '', '', ''),
-('314', 1, 'Padilla Ramos', '550', 'Pedro', '2022', '', '', '2019', ''),
-('110', 1, 'Cordero Linares', '750', 'Simon', '2022', '', '2020', '2019', '');
+INSERT INTO `socios` (`dni`, `apellidos`, `cp`, `direccion`, `nombre`, `num_casa`) VALUES
+('47347598M', 'Guerrero Marín', '41804', 'Calle Azahar n°23', 'Angel', '328');
 
 -- --------------------------------------------------------
 
@@ -96,22 +134,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `apellidos` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `num_casa` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(255) DEFAULT NULL,
+  `role` varchar(255) NOT NULL,
   `usuario` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_kfsp0s1tflm1cwlj8idhqsad0` (`email`),
   UNIQUE KEY `UK_3m5n1w5trapxlbo2s42ugwdmd` (`usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `activo`, `apellidos`, `email`, `nombre`, `num_casa`, `password`, `role`, `usuario`) VALUES
-(1, 1, 'Guerrero Marin', 'alum.aguerrerom@iesalixar.org', 'Angel', NULL, '$2a$15$y4GQyoH3wXVKWbu62ViW3OI90xZilH4OvSk6QHUvVaUb3kp89pE7q', 'ROLE_ADMIN', 'admin'),
-(6, 1, 'usuario', 'usuario@gmail.com', 'usuario', NULL, '$2a$15$ieNt6tLBq0TM6RwVFoOF6ekVi4JDWVdF04UlUVLJla7U5nj4PY/GK', 'ROLE_USER', 'usuario');
+INSERT INTO `usuarios` (`id`, `activo`, `apellidos`, `email`, `nombre`, `password`, `role`, `usuario`) VALUES
+(3, 0, 'admin', 'admin@gmail.com', 'admin', '$2a$15$KYTlDi6JQ9IKbbswJKMrVuOLa6uhmJCVimN7aZoXOmT/.6lt4fEAy', 'ROLE_ADMIN', 'admin'),
+(2, 1, 'usuario', 'usuario@gmail.com', 'usuario', '$2a$15$ZSUJt1G5PD2lQfglTiD39OlgFtkwMRAi6r3K9Bhxyaxh02Tkal.Ou', 'ROLE_ADMIN', 'usuario');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
