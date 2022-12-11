@@ -1,7 +1,7 @@
 # cotomar
 
 #### Curso Escolar 2022-2023
-#### Autor: [Ángel Guerrero Marín] https://github.com/aguerrerom
+#### Autor: [Ángel Guerrero Marín] https://github.com/aguerrerom/cotomar
 
 ## Breve descripción del proyecto
 
@@ -28,8 +28,6 @@ Se podrá acceder en cualquier parte ya que solo necesitará un dipositivo con c
 - **¿Qué necesidad va a cubrir?**
 
     Guardar la información importante en la comunidad y acceder a dicha información en cualquier parte solo teniendo un dispositivo con conexion ha internet.  
-
-## Prototipo de la Interfaz del proyecto
 
 ## Estructura del Proyecto
 
