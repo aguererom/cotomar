@@ -1,7 +1,7 @@
 # Cotomar
 
 #### Curso Escolar 2022-2023
-#### Autor: [Ángel Guerrero Marín] https://github.com/aguerrerom/cotomar
+#### Autor: [Ángel Guerrero Marín] https://github.com/aguererom/cotomar
 
 
 ## ÍNDICE
